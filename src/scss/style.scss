@@ -1,0 +1,84 @@
+:root {
+  --dark-blue: #03122f;
+  --midnight-blue: #19305c;
+  --dark-purple: #413b61;
+  --lavender: #ae7dac;
+  --pale-pink: #f3dadf;
+  --peach: #f1916d;
+  --white: #ffffff;
+  --grey: #f0f0f0;
+  --light-grey: #dcdcdc;
+}
+.datepicker {
+  font-family: "Roboto", "Helvetica Neue";
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  color: var(--dark-blue);
+  input {
+    padding: 8px;
+    margin-bottom: 0.5em;
+  }
+
+  .fa-calendar-alt {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  .calendar {
+    position: absolute;
+    border: 1px solid #ccc;
+    width: 216px;
+    left: 43px;
+    padding: 0.5em;
+
+    &.hidden {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &-header {
+      display: flex;
+      max-width: 216px;
+      margin: 0 auto;
+      text-align: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0.5em;
+      font-size: 0.9em;
+      font-weight: 500;
+    }
+
+    &-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      .calendar-day {
+        // border: 1px solid #ccc;
+        padding: 8px 0;
+        text-align: center;
+        font-size: 0.8em;
+        &:hover,
+        .active {
+          background-color: var(--midnight-blue);
+          color: var(--white);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-week {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    &-day-name {
+      font-size: 0.8em;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+}
